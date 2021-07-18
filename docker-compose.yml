@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  server:
+    container_name: server
+    entrypoint: ["/bin/bash", "./entrypoint.sh"]
+    image: dinesh/secret-company:0.0.2
+    build:
+      context: ./server
+    ports:
+      - "3001:8080"
+    environment:
+      - EXTERNAL_PORT=3001
+      - PGUSER=dinesh
+      - PGPASSWORD=12345
+      - PGDATABASE=test_database
+      - PGHOST=db # NAME OF THE SERVICE
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: "postgres:12"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=dinesh
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=test_database
+    volumes:
+      - data:/var/lib/postgresql/data
+volumes:
+  data: {}
