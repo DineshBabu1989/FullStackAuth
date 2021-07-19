@@ -1,3 +1,3 @@
 npm install
-npm run migrate
 npm run dev
+npm run migrate

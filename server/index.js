@@ -2,12 +2,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const {init} = require("./utils/db-init")
+const {init} = require("./utils/db-init");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: process.env.FRONT_END_URL
 };
 
+console.log("ENV",process.env.FRONT_END_URL);
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
