@@ -7,7 +7,7 @@
     "test": "jest",
     "dev": "node index.js",
     "migrate": "npx sequelize db:migrate",
-    "pretest": "NODE_ENV=test npm run migrate"
+    "cypress:open": "cypress open"
   },
   "keywords": [
     "node",
@@ -30,6 +30,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
+    "cypress": "^8.0.0",
     "jest": "^27.0.6"
   }
 }

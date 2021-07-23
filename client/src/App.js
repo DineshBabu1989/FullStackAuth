@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <nav className="navbar navbar-expand navbar-dark custom-nav">
         <Link to={"/"} className="navbar-brand">
           Secret Company
         </Link>

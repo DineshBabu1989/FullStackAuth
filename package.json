@@ -1,0 +1,28 @@
+{
+  "name": "fullstackauthentication",
+  "version": "1.0.0",
+  "description": "\"POC to demonstrate node postgres based authenitication\"",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DineshBabu1989/FullStackAuth.git"
+  },
+  "keywords": [
+    "node",
+    "postgres",
+    "docker",
+    "cypress"
+  ],
+  "author": "dinesh babu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DineshBabu1989/FullStackAuth/issues"
+  },
+  "homepage": "https://github.com/DineshBabu1989/FullStackAuth#readme",
+  "devDependencies": {
+    "cypress": "^8.0.0"
+  }
+}
