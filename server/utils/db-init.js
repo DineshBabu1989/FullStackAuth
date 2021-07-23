@@ -19,12 +19,14 @@ function populateRole() {
   });
 }
 
+/**
+ * Database initialisation
+ */
 function init() {
   db.sequelize.sync({ force: true }).then(() => {
     console.log('Drop and Resync Database with { force: true }');
     populateRole();
   });
-  console.log("TEST", process.env.NODE_ENV );
   
   if(process.env.NODE_ENV === "production") {
     db.sequelize.sync({ force: false }).then(() => {

@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const {init} = require("./utils/db-init");
 const dotenv = require("dotenv");
+const PORT = process.env.PORT || 8080;
 
 dotenv.config();
 
@@ -11,28 +12,25 @@ var corsOptions = {
   origin: process.env.FRONT_END_URL
 };
 
-console.log("ENV",process.env.FRONT_END_URL);
 app.use(cors(corsOptions));
-
-// parse requests of content-type - application/json
 app.use(bodyParser.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+/**
+ * Intialise db
+ */
 init();
 
-// simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to capital application." });
+  res.json({ message: "Welcome to secret company." });
 });
 
-// routes
+/**
+ * Routes
+ */
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 
-// set port, listen for requests
-const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

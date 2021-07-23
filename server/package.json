@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "node index.js",
-    "migrate": "npx sequelize db:migrate",
-    "cypress:open": "cypress open"
+    "migrate": "npx sequelize db:migrate"
   },
   "keywords": [
     "node",
